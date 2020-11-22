@@ -28,5 +28,4 @@ class DiscoverInfo extends TikTok
 
         return $response;
     }
-
 }
