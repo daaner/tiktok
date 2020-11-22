@@ -47,7 +47,7 @@ If necessary, write the settings to a `.env`.
 Use the model you want and get an array.
 
 
-### Model - UserInfo
+## Model - UserInfo
 
 - `getUser($userName)` - Get user data by name (full array)
 - `getUserInfo($userName)` - Get simple user data by name (only main and secondary array)
@@ -66,13 +66,13 @@ dd($user);
 ```
 
 
-### Model - TagInfo
+## Model - TagInfo
 
 - `getTag($tag)` - Get tag info
 - `getTagInfo($tag)` - Get tag simple info
 
 ```php
-use Daaner\TikTok\Models\UserInfo;
+use Daaner\TikTok\Models\TagInfo;
 
 $tt = new TagInfo;
 $tag = $tt->getTag('apple');
