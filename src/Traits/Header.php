@@ -65,7 +65,6 @@ trait Header
             $this->headers = array_merge($this->headers, ['verifyFp' => config('tiktok.verifyFp')]);
         }
 
-
         //add Response headers
         if ($headers) {
             $this->headers = array_merge($this->headers, $headers);

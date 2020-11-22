@@ -22,7 +22,7 @@ trait UserAgent
      */
     public function getUserAgent()
     {
-        if (!$this->userAgent) {
+        if (! $this->userAgent) {
             $this->userAgent = config('tiktok.user_agent');
         }
 
