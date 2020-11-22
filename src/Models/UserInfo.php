@@ -4,23 +4,21 @@ namespace Daaner\TikTok\Models;
 
 use Daaner\TikTok\TikTok;
 
-
 class UserInfo extends TikTok
 {
     protected $url;
     protected $arrayMain;
     protected $arraySecondary;
 
-
     /**
-     * @return this
+     * @return $this
      */
-    public function UserSettings() {
+    public function UserSettings()
+    {
         $this->url = config('tiktok.user_info.link');
         $this->arrayMain = config('tiktok.user_info.array_main');
         $this->arraySecondary = config('tiktok.user_info.array_secondary');
     }
-
 
     /**
      * @param string $userName
@@ -31,9 +29,9 @@ class UserInfo extends TikTok
         //add settings
         $this->UserSettings();
 
-        $userName = '@' . str_replace('@', '', $userName);
+        $userName = '@'.str_replace('@', '', $userName);
 
-        if (!$userName) {
+        if (! $userName) {
             return [
                 'success' => false,
                 'result' => null,
@@ -41,7 +39,7 @@ class UserInfo extends TikTok
             ];
         }
 
-        $response = $this->getResponse($this->url . $userName);
+        $response = $this->getResponse($this->url.$userName);
 
         return $response;
     }
@@ -68,5 +66,4 @@ class UserInfo extends TikTok
 
         return $result;
     }
-
 }
