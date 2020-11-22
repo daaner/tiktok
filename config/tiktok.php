@@ -25,9 +25,25 @@ return [
     */
 
     'primary_header' => [
+        'aid' => '1988',
         'app_name' => 'tiktok_web',
         'device_platform' => 'web',
         'cookie_enabled' => 'true',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default body primary for API
+    |--------------------------------------------------------------------------
+    |
+    | These are very important parameters
+    |
+    */
+
+    'primary_body_api' => [
+        'aid' => '1988',
+        'app_name' => 'tiktok_web',
+        'device_platform' => 'web',
     ],
 
     /*
@@ -124,10 +140,9 @@ return [
     | If you leave empty fields, the data will not be inserted
     |
     */
-    'use_header_personal' => true,
+    'use_header_personal' => false,
 
     'personal' => [
-        'aid' => '1988',
         'appId' => '1233',
         'isUniqueId' => 'true',
     ],
@@ -179,6 +194,8 @@ return [
     'music_info' => [
         /* example '.../share/music/I-JUST-FELL-6768866707013388289' */
         'link' => 'https://www.tiktok.com/node/share/music/',
+        'link_api' => 'https://m.tiktok.com/api/music/item_list/',
+        'api_field' => 'musicID',
         'array_primary' => 'musicInfo',
         'array_secondary' => 'metaParams',
     ],

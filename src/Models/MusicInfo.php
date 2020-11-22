@@ -7,6 +7,8 @@ use Daaner\TikTok\TikTok;
 class MusicInfo extends TikTok
 {
     protected $url;
+    protected $url_api;
+    protected $api_field;
     protected $arrayPrimary;
     protected $arraySecondary;
 
@@ -16,6 +18,8 @@ class MusicInfo extends TikTok
     public function ModelSettings()
     {
         $this->url = config('tiktok.music_info.link');
+        $this->url_api = config('tiktok.music_info.link_api');
+        $this->api_field = config('tiktok.music_info.api_field');
         $this->arrayPrimary = config('tiktok.music_info.array_primary');
         $this->arraySecondary = config('tiktok.music_info.array_secondary');
     }
@@ -30,6 +34,28 @@ class MusicInfo extends TikTok
         $this->ModelSettings();
 
         $response = $this->getResponse($this->url.$music);
+
+        return $response;
+    }
+
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function getMusicApi($id, $count = 30, $cursor = 0)
+    {
+        //add settings
+        $this->ModelSettings();
+
+        $body = [
+            $this->api_field => $id,
+            'count' => $count,
+            'cursor' => $cursor,
+        ];
+
+        $body = array_merge($body, config('tiktok.primary_body_api'));
+
+        $response = $this->getResponse($this->url_api, $body);
 
         return $response;
     }

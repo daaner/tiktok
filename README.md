@@ -89,6 +89,7 @@ dd($tag);
 
 - `getMusic($music)` - Get music info
 - `getMusicInfo($music)` - Get music simple info
+- `getMusicApi($id, $count = 30, $cursor = 0)` - Get music id data (count shows 1 item less)))))
 
 ```php
 use Daaner\TikTok\Models\MusicInfo;
@@ -97,6 +98,9 @@ $tt = new MusicInfo;
 $music = $tt->getMusic('I-JUST-FELL-6768866707013388289');
 // or for simple
 $music = $tt->getMusicInfo('I-JUST-FELL-6768866707013388289');
+
+//and API
+$music = $tt->getMusicApi('6728860413338847233', 10, 2);
 
 dd($music);
 ```
