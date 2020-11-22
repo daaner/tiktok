@@ -172,14 +172,14 @@ return [
     'user_info' => [
         /* full link must contain username '.../share/user/@tiktok' */
         'link' => 'https://www.tiktok.com/node/share/user/',
-        'array_main' => 'userInfo',
+        'array_primary' => 'userInfo',
         'array_secondary' => 'metaParams',
     ],
 
     'music_info' => [
         /* full link must contain username '.../share/music/name-6896550751461083905' */
         'link' => 'https://www.tiktok.com/node/share/music/',
-        'array_main' => 'musicInfo',
+        'array_primary' => 'musicInfo',
         'array_secondary' => 'metaParams',
     ],
 
@@ -187,7 +187,7 @@ return [
     'tag_info' => [
         /* full link must contain username '.../share/tag/apple' */
         'link' => 'https://www.tiktok.com/node/share/tag/',
-        'array_main' => 'challengeInfo',
+        'array_primary' => 'challengeInfo',
         'array_secondary' => 'metaParams',
     ],
 

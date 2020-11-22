@@ -4,7 +4,7 @@ namespace Daaner\TikTok\Models;
 
 use Daaner\TikTok\TikTok;
 
-class UserInfo extends TikTok
+class TagInfo extends TikTok
 {
     protected $url;
     protected $arrayPrimary;
@@ -15,42 +15,42 @@ class UserInfo extends TikTok
      */
     public function ModelSettings()
     {
-        $this->url = config('tiktok.user_info.link');
-        $this->arrayPrimary = config('tiktok.user_info.array_primary');
-        $this->arraySecondary = config('tiktok.user_info.array_secondary');
+        $this->url = config('tiktok.tag_info.link');
+        $this->arrayPrimary = config('tiktok.tag_info.array_primary');
+        $this->arraySecondary = config('tiktok.tag_info.array_secondary');
     }
 
     /**
-     * @param string $userName
+     * @param string $tag
      * @return array
      */
-    public function getUser($userName)
+    public function getTag($tag)
     {
         //add settings
         $this->ModelSettings();
 
-        $userName = '@'.str_replace('@', '', $userName);
+        $tag = str_replace('#', '', $tag);
 
-        if (! $userName) {
+        if (! $tag) {
             return [
                 'success' => false,
                 'result' => null,
-                'info' => __('tiktok::tiktok.error_username'),
+                'info' => __('tiktok::tiktok.error_tag'),
             ];
         }
 
-        $response = $this->getResponse($this->url.$userName);
+        $response = $this->getResponse($this->url.$tag);
 
         return $response;
     }
 
     /**
-     * @param string $userName
+     * @param string $tag
      * @return array
      */
-    public function getUserInfo($userName)
+    public function getTagInfo($tag)
     {
-        $data = $this->getUser($userName);
+        $data = $this->getTag($tag);
 
         $result = [];
         $result['success'] = $data['success'];

@@ -48,25 +48,43 @@ Use the model you want and get an array.
 
 
 ### Model - UserInfo
+
 - `getUser($userName)` - Get user data by name (full array)
+- `getUserInfo($userName)` - Get simple user data by name (only main and secondary array)
+
 ```php
 use Daaner\TikTok\Models\UserInfo;
 
 $tt = new UserInfo;
+$user = $tt->getUser('tiktok');
+//or
 $user = $tt->getUser('@tiktok');
-
-dd($user);
-```
-
-- `getUserInfo($userName)` - Get user data by name (only main and secondary array)
-```php
-use Daaner\TikTok\Models\UserInfo;
-
-$tt = new UserInfo;
+// or for simple info
 $user = $tt->getUserInfo('tiktok');
 
 dd($user);
 ```
+
+
+### Model - TagInfo
+
+- `getTag($tag)` - Get tag info
+- `getTagInfo($tag)` - Get tag simple info
+
+```php
+use Daaner\TikTok\Models\UserInfo;
+
+$tt = new TagInfo;
+$tag = $tt->getTag('apple');
+//or
+$tag = $tt->getTag('#apple');
+// or for simple
+$tag = $tt->getTagInfo('apple');
+
+
+dd($tag);
+```
+
 
 
 
