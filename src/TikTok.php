@@ -3,15 +3,12 @@
 namespace Daaner\TikTok;
 
 use Daaner\TikTok\Contracts\TikTokInterface;
-use Illuminate\Support\Facades\Http;
-
-use Daaner\TikTok\Traits\UserAgent;
 use Daaner\TikTok\Traits\Header;
-
+use Daaner\TikTok\Traits\UserAgent;
+use Illuminate\Support\Facades\Http;
 
 class TikTok implements TikTokInterface
 {
-
     protected $primaryHeader;
 
     use UserAgent, Header;
@@ -23,13 +20,11 @@ class TikTok implements TikTokInterface
      */
     public function __construct()
     {
-      $this->primaryHeader = config('tiktok.primary_header');
-
-
+        $this->primaryHeader = config('tiktok.primary_header');
     }
 
     /**
-     * This default response method
+     * This default response method.
      *
      * @param string $url
      * @param array|null $body
@@ -63,5 +58,4 @@ class TikTok implements TikTokInterface
             'info' => '',
         ];
     }
-
 }
