@@ -177,18 +177,29 @@ return [
     ],
 
     'music_info' => [
-        /* full link must contain username '.../share/music/name-6896550751461083905' */
+        /* example '.../share/music/I-JUST-FELL-6768866707013388289' */
         'link' => 'https://www.tiktok.com/node/share/music/',
         'array_primary' => 'musicInfo',
         'array_secondary' => 'metaParams',
     ],
 
-    //Инфо по тэгу
     'tag_info' => [
-        /* full link must contain username '.../share/tag/apple' */
+        /* example '.../share/tag/apple' */
         'link' => 'https://www.tiktok.com/node/share/tag/',
         'array_primary' => 'challengeInfo',
         'array_secondary' => 'metaParams',
+    ],
+
+    'discover_info' => [
+        'link' => 'https://www.tiktok.com/node/share/discover/',
+        'array_primary' => 'body',
+        'array_secondary' => '',
+    ],
+
+    'item_list' => [
+        'link' => 'https://m.tiktok.com/api/challenge/item_list/',
+        'array_primary' => 'items',
+        'array_secondary' => '',
     ],
 
 ];

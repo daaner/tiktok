@@ -81,8 +81,38 @@ $tag = $tt->getTag('#apple');
 // or for simple
 $tag = $tt->getTagInfo('apple');
 
-
 dd($tag);
+```
+
+
+## Model - MusicInfo
+
+- `getMusic($music)` - Get music info
+- `getMusicInfo($music)` - Get music simple info
+
+```php
+use Daaner\TikTok\Models\MusicInfo;
+
+$tt = new MusicInfo;
+$music = $tt->getMusic('I-JUST-FELL-6768866707013388289');
+// or for simple
+$music = $tt->getMusicInfo('I-JUST-FELL-6768866707013388289');
+
+dd($music);
+```
+
+
+## Model - DiscoverInfo
+
+- `getDiscover()` - Get discover info
+
+```php
+use Daaner\TikTok\Models\DiscoverInfo;
+
+$tt = new DiscoverInfo;
+$discover = $tt->getDiscover();
+
+dd($discover);
 ```
 
 
