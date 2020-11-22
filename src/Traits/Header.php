@@ -12,7 +12,7 @@ trait Header
      */
     public function setHeaders($addition_headers)
     {
-        if ($addition_headers) {
+        if (is_array($addition_headers) && !empty($addition_headers)) {
             $this->headers = array_merge($this->headers, $addition_headers);
         }
 
