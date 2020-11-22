@@ -1,0 +1,50 @@
+{
+    "name": "daaner/tiktok",
+    "description": "TikTok scrapper for Laravel 7+",
+    "keywords": [
+        "daaner",
+        "tiktok",
+        "tiktok-php",
+        "tiktok-scrapper",
+        "tiktok-parse",
+        "laravel-tiktok"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daan",
+            "email": "daan@ukr.net",
+            "homepage": "https://github.com/daaner"
+        },
+        {
+            "name": "Kirill Astakhov",
+            "email": "imkastahov@gmail.com",
+            "homepage": "https://github.com/kastahov"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "laravel/framework": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daaner\\TikTok\\Facades\\": "src/Facades",
+            "Daaner\\TikTok\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Daaner\\TikTok\\TikTokServiceProvider"
+            ],
+            "aliases": {
+                "TikTok": "Daaner\\TikTok\\Facades\\TikTok"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
