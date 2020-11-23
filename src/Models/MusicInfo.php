@@ -40,6 +40,8 @@ class MusicInfo extends TikTok
 
     /**
      * @param int $id
+     * @param int|null $count
+     * @param int|null $cursor
      * @return array
      */
     public function getMusicApi($id, $count = 30, $cursor = 0)

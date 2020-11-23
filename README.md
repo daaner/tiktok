@@ -70,6 +70,7 @@ dd($user);
 
 - `getTag($tag)` - Get tag info
 - `getTagInfo($tag)` - Get tag simple info
+- `getTagApi($id, $count = 30, $cursor = 0)` - Get tag id data
 
 ```php
 use Daaner\TikTok\Models\TagInfo;
@@ -81,6 +82,9 @@ $tag = $tt->getTag('#apple');
 // or for simple
 $tag = $tt->getTagInfo('apple');
 
+//and API data
+$tag = $tt->getTagApi('13100', 10, 0);
+
 dd($tag);
 ```
 
@@ -89,7 +93,7 @@ dd($tag);
 
 - `getMusic($music)` - Get music info
 - `getMusicInfo($music)` - Get music simple info
-- `getMusicApi($id, $count = 30, $cursor = 0)` - Get music id data (count shows 1 item less)))))
+- `getMusicApi($id, $count = 30, $cursor = 0)` - Get music id data (count shows 1 item less only this API query)))))
 
 ```php
 use Daaner\TikTok\Models\MusicInfo;
@@ -99,7 +103,7 @@ $music = $tt->getMusic('I-JUST-FELL-6768866707013388289');
 // or for simple
 $music = $tt->getMusicInfo('I-JUST-FELL-6768866707013388289');
 
-//and API
+//and API data
 $music = $tt->getMusicApi('6728860413338847233', 10, 2);
 
 dd($music);
@@ -109,12 +113,20 @@ dd($music);
 ## Model - DiscoverInfo
 
 - `getDiscover()` - Get discover info
+- `getDiscoverApi($type)` - Get Suggested data
 
 ```php
 use Daaner\TikTok\Models\DiscoverInfo;
 
 $tt = new DiscoverInfo;
 $discover = $tt->getDiscover();
+
+//and API data
+$discover = $tt->getDiscoverApi('user');
+//or
+$discover = $tt->getDiscoverApi('music');
+//or
+$discover = $tt->getDiscoverApi('challenge');
 
 dd($discover);
 ```

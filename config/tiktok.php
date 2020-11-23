@@ -44,6 +44,7 @@ return [
         'aid' => '1988',
         'app_name' => 'tiktok_web',
         'device_platform' => 'web',
+        'language' => 'en',
     ],
 
     /*
@@ -203,20 +204,24 @@ return [
     'tag_info' => [
         /* example '.../share/tag/apple' */
         'link' => 'https://www.tiktok.com/node/share/tag/',
+        'link_api' => 'https://m.tiktok.com/api/challenge/item_list/',
+        'api_field' => 'challengeID',
         'array_primary' => 'challengeInfo',
         'array_secondary' => 'metaParams',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Suggested accounts
+    |--------------------------------------------------------------------------
+    |
+    | In API has lists: 'user', 'music', 'challenge'
+    |
+    */
+
     'discover_info' => [
         'link' => 'https://www.tiktok.com/node/share/discover/',
-        'array_primary' => 'body',
-        'array_secondary' => '',
-    ],
-
-    'item_list' => [
-        'link' => 'https://m.tiktok.com/api/challenge/item_list/',
-        'array_primary' => 'items',
-        'array_secondary' => '',
+        'link_api' => 'https://m.tiktok.com/api/discover/',
     ],
 
 ];
