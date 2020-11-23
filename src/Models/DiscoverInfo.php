@@ -35,8 +35,8 @@ class DiscoverInfo extends TikTok
      * @param string $type
      * @param int|null $count
      * @param int|null $offset
-     * @param boolean $needItemList
-     * @param boolean useRecommend
+     * @param bool $needItemList
+     * @param bool useRecommend
      *
      * $discoverType only 0
      * $keyWord not used
@@ -59,7 +59,7 @@ class DiscoverInfo extends TikTok
 
         $body = array_merge($body, config('tiktok.primary_body_api'));
 
-        $response = $this->getResponse($this->url_api . $type, $body);
+        $response = $this->getResponse($this->url_api.$type, $body);
 
         return $response;
     }
