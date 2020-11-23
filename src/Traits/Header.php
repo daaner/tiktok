@@ -4,6 +4,7 @@ namespace Daaner\TikTok\Traits;
 
 trait Header
 {
+    protected $userAgent;
     protected $headers = [];
 
     /**
@@ -24,7 +25,8 @@ trait Header
      */
     public function getHeader($headers)
     {
-        //add from trait UserAgent Header
+        //add UserAgent Header
+        $this->getUserAgent();
         $this->headers = array_merge($this->headers, ['user-agent' => $this->userAgent]);
 
         //add from config - primary_header
@@ -71,5 +73,28 @@ trait Header
         }
 
         return $this->headers;
+    }
+
+    /**
+     * @param string $userAgent
+     * @return this
+     */
+    public function setUserAgent($userAgent)
+    {
+        $this->userAgent = $userAgent;
+
+        return $this;
+    }
+
+    /**
+     * @return string $this->userAgent
+     */
+    public function getUserAgent()
+    {
+        if (! $this->userAgent) {
+            $this->userAgent = config('tiktok.user_agent');
+        }
+
+        return $this->userAgent;
     }
 }

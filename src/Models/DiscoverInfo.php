@@ -36,7 +36,7 @@ class DiscoverInfo extends TikTok
      * @param int|null $count
      * @param int|null $offset
      * @param bool $needItemList
-     * @param bool useRecommend
+     * @param bool $useRecommend
      *
      * $discoverType only 0
      * $keyWord not used

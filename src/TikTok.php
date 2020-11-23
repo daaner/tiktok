@@ -4,14 +4,13 @@ namespace Daaner\TikTok;
 
 use Daaner\TikTok\Contracts\TikTokInterface;
 use Daaner\TikTok\Traits\Header;
-use Daaner\TikTok\Traits\UserAgent;
 use Illuminate\Support\Facades\Http;
 
 class TikTok implements TikTokInterface
 {
     protected $primaryHeader;
 
-    use UserAgent, Header;
+    use Header;
 
     protected $baseUri = 'https://api.tiktok.com/';
 
@@ -34,7 +33,6 @@ class TikTok implements TikTokInterface
      */
     public function getResponse($url, $body = null, $headers = null)
     {
-        $userAgent = $this->getUserAgent();
         $header = $this->getHeader($headers);
 
         $response = Http::timeout(config('tiktok.tt_timeout'))
@@ -58,4 +56,5 @@ class TikTok implements TikTokInterface
             'info' => '',
         ];
     }
+
 }
