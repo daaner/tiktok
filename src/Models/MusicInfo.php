@@ -30,7 +30,7 @@ class MusicInfo extends TikTok
      */
     public function getMusic($music)
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $response = $this->getResponse($this->url.$music);
@@ -46,7 +46,7 @@ class MusicInfo extends TikTok
      */
     public function getMusicApi($id, $count = 30, $cursor = 0)
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $body = [

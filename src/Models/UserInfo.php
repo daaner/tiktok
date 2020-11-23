@@ -26,7 +26,7 @@ class UserInfo extends TikTok
      */
     public function getUser($userName)
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $userName = '@'.str_replace('@', '', $userName);

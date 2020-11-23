@@ -23,7 +23,7 @@ class DiscoverInfo extends TikTok
      */
     public function getDiscover()
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $response = $this->getResponse($this->url);
@@ -45,7 +45,7 @@ class DiscoverInfo extends TikTok
      */
     public function getDiscoverApi($type, $count = 20, $offset = 0, $needItemList = true, $useRecommend = false)
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $body = [

@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static array getResponse($url, $body)
  *
- *
  * @see \Daaner\TikTok
  */
 class TikTok extends Facade

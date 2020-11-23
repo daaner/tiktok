@@ -30,7 +30,7 @@ class TagInfo extends TikTok
      */
     public function getTag($tag)
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $tag = str_replace('#', '', $tag);
@@ -56,7 +56,7 @@ class TagInfo extends TikTok
      */
     public function getTagApi($id, $count = 30, $cursor = 0)
     {
-        //add settings
+        /* add settings */
         $this->ModelSettings();
 
         $body = [
