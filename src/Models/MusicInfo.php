@@ -33,6 +33,9 @@ class MusicInfo extends TikTok
         /* add settings */
         $this->ModelSettings();
 
+        /* this hack id or name */
+        $music = '-' . substr(strrchr('-' .$music, '-'), 1);
+
         $response = $this->getResponse($this->url.$music);
 
         return $response;

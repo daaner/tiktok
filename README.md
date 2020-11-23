@@ -100,8 +100,10 @@ use Daaner\TikTok\Models\MusicInfo;
 
 $tt = new MusicInfo;
 $music = $tt->getMusic('I-JUST-FELL-6768866707013388289');
+//or
+$music = $tt->getMusic('6768866707013388289');
 // or for simple
-$music = $tt->getMusicInfo('I-JUST-FELL-6768866707013388289');
+$music = $tt->getMusicInfo('6768866707013388289');
 
 //and API data
 $music = $tt->getMusicApi('6728860413338847233', 10, 2);
